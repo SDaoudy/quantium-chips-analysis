@@ -1,106 +1,81 @@
-Projet Quantium – Analyse des ventes de croustilles
+Quantium Chips Analysis — Retail Data & Customer Insights
 
-Ce projet est réalisé dans le cadre du programme virtuel “Retail Strategy & Analytics” de Quantium.
-L’objectif de la première phase est de nettoyer, fusionner et analyser les données de transactions et de clients relatives à la catégorie Chips (croustilles).
+**Python + Power BI Project
+*Auteur : Daouda Sangaré
 
-🎯 Objectifs de la Task 1
+Objectif du projet
 
-Nettoyer les jeux de données transactionnels et clients
+Ce projet vise à analyser les données de vente de chips fournies par Quantium (programme Forage) afin de :
 
-Fusionner les deux jeux de données
+nettoyer et préparer les données (transactions + clients),
+analyser les comportements d’achat par segment client,
+comprendre la performance des marques et des formats,
+créer un tableau de bord Power BI interactif,
+formuler des recommandations pour améliorer les ventes.
 
-Créer de nouvelles variables (PACK_SIZE, BRAND)
+Contenu du projet
 
-Réaliser une analyse descriptive et statistique :
+1. Python — Data Cleaning & Exploration
 
-Total des ventes
+Notebook utilisé : `analysis_python.ipynb`
 
-Ventes par taille de paquet
+Étapes principales :
 
-Ventes par marque
+Nettoyage du fichier transactionnel
+Correction des valeurs aberrantes
+Suppression des incohérences (pack size, prix unitaire)
+Fusion des données transaction + clients
+Exploration statistique :
 
-Ventes par segment client
+Top marques
+Segments les plus rentables
+Analyse pack size
+Analyse temporelle
+Préparation des fichiers pour Power BI
 
-Test T pour comparer Premium vs Mainstream
+2. Power BI — Dashboard & Insights
 
-Générer des visualisations et formuler des insights stratégiques
+Fichier : PwBI (quantium_chips_dashboard.pbix)
 
-🧹 Nettoyage des données
+Contient :
 
-Conversion du format de date Excel en datetime
+Page KPI (Total Sales, Avg Sales, Pack Size…)
+Analyse des ventes par marque
+Analyse des tailles de paquet
+Tendances mensuelles
+Segmentation client :
 
-Suppression de deoublons et des transactions anormales (quantité > 10 ou ventes > 100 $)
+Lifestage
+Premium/Budget/Mainstream
+Slicers dynamiques (Brand, Pack Size)
+Page "Insights Summary" avec recommandations
 
-Vérification des produits (catégorie Chips uniquement)
+Principaux insights
 
-Nettoyage et uniformisation du fichier client
+Segment avec le plus grand volume de ventes : Older Families — Budget
+Panier moyen le plus élevé : Midage Singles/Couples — Mainstream
+Marque dominante : Kettle (~0,38M$)
+Taille la plus achetée : 175g
+Saisonnalité : Forte hausse en novembre–décembre
 
-Fusion des deux sources de données sur LYLTY_CARD_NBR
+Recommandations
 
-Extraction des variables : PACK_SIZE, BRAND
+Cibler les segments Budget & Mainstream en priorité
+Renforcer la présence en rayon des formats 175g
+Augmenter les stocks avant la période de fêtes
+Mettre en avant Kettle / Smiths / Doritos selon segment
 
-📊 Résultats principaux
-Indicateur	Résultat
-Période analysée	Juillet 2018 – Juin 2019
-Nombre de transactions	≈ 246 800
-Total des ventes	≈ 1,8 M$
-Taille la plus vendue	175g
-Marque dominante	Smiths
-Segments les plus rentables	Older Families - Budget (168 363.25) & Young Singles/Couples - Mainstream (157 621.60)
-🧪 Analyse statistique (Test T)
+Technologies utilisées
 
-Le test T a comparé les ventes entre les clients Premium et Mainstream :
+Python : Pandas, Numpy, Matplotlib
+Power BI : DAX, Data Modeling, Visual Analytics
+Git & GitHub
 
-Indicateur	Résultat
-T-statistic : -7.912461410084792
-p-value : 	2.538392195853852e-15
+Auteur
 
-➡️Puisque la p-value ( 2.54×10−15 ) est nettement inférieure au seuil de signification commun 
-( α=0.05  ou même  α=0.01 ), on rejete l'hypothèse nulle ( H0 ).
-
-💡 Insights stratégiques
-
-Les formats 175g génèrent le plus de ventes : bon équilibre prix/quantité.
-
-Les marques Dorito, Old et Kettle dominent le marché.
-
-Les clients Older Families - Budget et les Young Singles/Couples - Mainstream sont les plus rentables.
-Cela indique que, même si les clients Premium peuvent avoir un panier moyen plus élevé (plus de produits chers par visite), 
-ils sont moins nombreux ou achètent moins souvent
- que les clients Budget ou Mainstream, ce qui fait que leur contribution aux ventes totales est plus faible
-
-Recommandation : L'entreprise devrait examiner le produit ou la catégorie de produits vendus en 175g pour comprendre
- pourquoi il est associé à des transactions si coûteuses et essayer de reproduire ce comportement d'achat sur d'autres tailles..
-
-🧰 Outils et technologies
-
-Python : Pandas, NumPy, Matplotlib, Seaborn, SciPy
-
-Google Colab : développement et tests
-
-GitHub : versionnement et documentation
-
-📁 Structure du projet
-quantium-chips-analysis/
-├── data/
-├── notebooks/
-├── outputs/
-├── README.md
-└── requirements.txt
-
-📈 Étapes suivantes (Task 2)
-
-Analyse détaillée des comportements d’achat
-
-Tests statistiques additionnels (t-test multi-segments)
-
-Création de visualisations Power BI
-
-Recommandations finales pour le Category Manager
-
-👤 Auteur
-
-Daouda Sangaré
-Analyste de données | Intelligence d’affaires
+Daouda Sangaré — Data Analyst
 📧 sangaredaoudda@gmail.com
-🌐 https://github.com/SDaoudy
+🔗 www.linkedIn.com/in/daoud-sangaré
+
+
+Updated README with full project documentation
